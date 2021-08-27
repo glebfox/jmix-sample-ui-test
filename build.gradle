@@ -34,11 +34,28 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    implementation('org.jsoup:jsoup') {
+        version {
+            strictly '1.11.2'
+        }
+    }
+
     runtimeOnly 'org.hsqldb:hsqldb'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+
+    // the library for the UI testing
+    testImplementation 'com.codeborne:selenide:5.20.1'
+    testImplementation 'io.jmix.masquerade:jmix-masquerade:1.0.0'
+
+    // testcontainers
+    testImplementation 'org.testcontainers:selenium:1.15.2'
+    testImplementation 'org.testcontainers:junit-jupiter:1.15.2'
+
+    // enable logging
+    testImplementation 'org.slf4j:jul-to-slf4j:1.7.25'
 }
 
 test {
