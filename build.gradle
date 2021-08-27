@@ -60,4 +60,6 @@ dependencies {
 
 test {
     useJUnitPlatform()
+
+    systemProperty 'selenide.baseUrl', 'http://host.docker.internal:8080'
 }

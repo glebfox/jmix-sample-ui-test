@@ -14,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @ExtendWith(ChromeExtension.class)
 public class LoginUiTest {
 
+    // The application must be running on the url = http://localhost:8080
+    // User can change the base url using the 'selenide.baseUrl' variable in build.gradle file
     @Test
     public void login() {
-//        open("http://localhost:8080");
-        open("http://host.docker.internal:8080");
-
+        open("/");
         LoginScreen loginScreen = $j(LoginScreen.class);
 
         assertNotNull(loginScreen.getUsernameField());
@@ -39,8 +39,8 @@ public class LoginUiTest {
                 .shouldBe(ENABLED)
                 .shouldHave(caption("Submit"));
 
-        Untyped loginFormLayout = wire(Untyped.class, "loginFormLayout");
-        loginFormLayout.shouldBe(VISIBLE);
+        Untyped loginForm = wire(Untyped.class, "loginForm");
+        loginForm.shouldBe(VISIBLE);
 
         loginScreen.getLoginButton().click();
     }

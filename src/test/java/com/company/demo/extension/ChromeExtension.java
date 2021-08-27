@@ -18,7 +18,6 @@ public class ChromeExtension implements BeforeEachCallback, AfterEachCallback {
                 .withCapabilities(new ChromeOptions());
         browser.start();
         WebDriverRunner.setWebDriver(browser.getWebDriver());
-//        Selenide.open("/");
     }
 
     @Override
