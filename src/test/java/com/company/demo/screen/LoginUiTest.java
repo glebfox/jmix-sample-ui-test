@@ -28,8 +28,8 @@ public class LoginUiTest {
                 .shouldBe(EDITABLE)
                 .shouldBe(ENABLED);
 
-        loginScreen.getUsernameField().setValue("masquerade");
-        loginScreen.getPasswordField().setValue("rulezzz");
+        loginScreen.getUsernameField().setValue("admin");
+        loginScreen.getPasswordField().setValue("admin");
 
         loginScreen.getWelcomeLabelTest()
                 .shouldBe(VISIBLE);
